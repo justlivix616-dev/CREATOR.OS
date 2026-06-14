@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Creator Hub | Gaming</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav>
+        <div class="logo">CREATOR.OS</div>
+        <div class="nav-links">
+            <a href="#home">Home</a>
+            <a href="#videos">Videos</a>
+            <a href="#skills">Skills</a>
+            <a href="#faq">FAQ</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </nav>
+
+    <section id="home" class="hero">
+        <h1 class="reveal">Build <span>Digital</span> Worlds.</h1>
+        <p class="reveal">Full-stack Web Developer, 3D Artist, and Gaming Content Creator.</p>
+        <div class="reveal" style="margin-top: 30px;">
+            <a href="#videos" class="btn">View My Work</a>
+        </div>
+    </section>
+
+    <div class="stats-bar reveal">
+        <div class="stat-item"><h2>10K+</h2><p>Subscribers</p></div>
+        <div class="stat-item"><h2>50+</h2><p>Web Projects</p></div>
+        <div class="stat-item"><h2>100+</h2><p>3D Models</p></div>
+        <div class="stat-item"><h2>2026</h2><p>Active Since</p></div>
+    </div>
+
+    <section id="videos" class="reveal">
+        <h2 class="section-title">Latest Content</h2>
+        <div class="grid">
+            <div class="card">
+                <div class="card-img"></div>
+                <h3>Advanced Webflow Landing Page</h3>
+                <p>Learn how to build high-converting sites for freelancers.</p>
+            </div>
+            <div class="card">
+                <div class="card-img"></div>
+                <h3>Blender Character Workflow</h3>
+                <p>Creating professional character models from scratch.</p>
+            </div>
+            <div class="card">
+                <div class="card-img"></div>
+                <h3>Poppy Playtime 5 Walkthrough</h3>
+                <p>Exploring the deepest secrets of the latest chapter.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills" class="reveal" style="background: rgba(255,255,255,0.02);">
+        <h2 class="section-title">Tech Stack & Tools</h2>
+        <div class="skills-container">
+            <div class="skill-tag">HTML5 / CSS3</div>
+            <div class="skill-tag">JavaScript / Java</div>
+            <div class="skill-tag">Roblox Studio (Lua)</div>
+            <div class="skill-tag">Blender 3D</div>
+            <div class="skill-tag">Webflow</div>
+            <div class="skill-tag">Video Editing</div>
+        </div>
+    </section>
+
+    <section id="faq" class="reveal">
+        <h2 class="section-title">Common Questions</h2>
+        <div style="max-width: 800px; margin: 0 auto;">
+            <div class="faq-item">
+                <h4>What software do you use for 3D?</h4>
+                <p>I primarily use Blender for modeling and texturing, focused on character creation.</p>
+            </div>
+            <div class="faq-item">
+                <h4>Are you available for freelance?</h4>
+                <p>Yes! I specialize in landing pages and Roblox scripting projects.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h4>Navigation</h4>
+                <ul>
+                    <li>Home</li>
+                    <li>Portfolio</li>
+                    <li>YouTube</li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Socials</h4>
+                <ul>
+                    <li>Discord</li>
+                    <li>Telegram</li>
+                    <li>Twitter</li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Newsletter</h4>
+                <p style="color: var(--text-dim); font-size: 0.9rem; margin-bottom: 15px;">Get updates on new videos.</p>
+                <input type="email" placeholder="Your email" style="padding: 10px; border-radius: 5px; border: none; width: 100%;">
+            </div>
+        </div>
+        <center style="color: #475569; font-size: 0.8rem;">&copy; 2026 Creator Portfolio. Developed by Livix.</center>
+    </footer>
+
+    <script>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) entry.target.classList.add('active');
+            });
+        }, { threshold: 0.1 });
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+        const cursorDot = document.querySelector('.cursor-dot');
+    const cursorOutline = document.querySelector('.cursor-outline');
+    const interactiveElements = document.querySelectorAll('a, button, .hamburger');
+
+    window.addEventListener('mousemove', function(e) {
+        const posX = e.clientX;
+        const posY = e.clientY;
+
+        cursorDot.style.left = `${posX}px`;
+        cursorDot.style.top = `${posY}px`;
+
+        // Анимация для "хвоста" курсора
+        cursorOutline.animate({
+            left: `${posX}px`,
+            top: `${posY}px`
+        }, { duration: 500, fill: "forwards" });
+    });
+    </script>
+</body>
+</html>
